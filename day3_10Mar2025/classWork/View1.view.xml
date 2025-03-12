@@ -1,0 +1,34 @@
+<mvc:View controllerName="avengerdata.controller.View1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page id="page" title="Marvel Database">
+		<Button id="btnAvengers" text="Avengers" press="onAvengersClick" />
+		<Button id="btnInfinityStones" text="Infinity Stones" press="onInfinityStonesClick" />
+
+		<Table id="idSuperHerosTable" inset="false" items="{
+			path: 'oAvengerTableModel>/aAvengerTableResult/aAvengersData'
+		}">
+			<columns>
+				<Column id="colName" minScreenWidth="Tablet" demandPopin="true">
+					<Text id="txtName" text="Name" />
+				</Column>
+				<Column id="colPower" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+					<Text id="txtPower" text="Power" />
+				</Column>
+				<Column id="colnMovie" hAlign="End">
+					<Text id="txtMovie" text="Movie" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id="colAvengerColumnListItem" vAlign="Middle">
+					<cells>
+						<Text id="txtItemName" text="{oAvengerTableModel>sName}" />
+						<Text id="txtItemPower" text="{oAvengerTableModel>sPower}" />
+						<Text id="txtItemMovie" text="{oAvengerTableModel>sMovie}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+
+	</Page>
+</mvc:View>

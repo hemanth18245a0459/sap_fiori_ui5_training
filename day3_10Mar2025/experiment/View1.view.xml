@@ -1,0 +1,77 @@
+<mvc:View controllerName="avengerdata.controller.View1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page id="page" title="Marvel Database">
+		<Button id="btnAvengers" text="Avengers" press="onAvengersClick" />
+		<Button id="btnInfinityStones" text="Infinity Stones" press="onInfinityStonesClick" />
+
+		<Table id="idSuperHerosTable" inset="false" items="{
+			path: 'oAvengerTableModel>/aAvengerTableResult'
+		}">
+			<columns>
+				<Column id="colAvengerID">
+					<Text id="txtAvengerID" text="AvengerID" />
+				</Column>
+				<Column id="colAvengerName" minScreenWidth="Tablet" demandPopin="true">
+					<Text id="txtAvengerName" text="Name" />
+				</Column>
+				<Column id="colAvengerRealName" minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+					<Text id="txtAvengerRealName" text="RealName" />
+				</Column>
+				<Column id="colAvengerPower" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+					<Text id="txtAvengerPower" text="Power" />
+				</Column>
+				<Column id="colAvengerWeapon" hAlign="End">
+					<Text id="txtAvengerWeapon" text="Weapon" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id="colAvengerColumnListItem" vAlign="Middle">
+					<cells>
+						<Text id="txtItemAvengerID" text="{oAvengerTableModel>sAvengerId}" />
+						<Text id="txtItemAvengerName" text="{oAvengerTableModel>sAvengerName}" />
+						<Text id="txtItemAvengerRealName" text="{oAvengerTableModel>sRealName}" />
+						<Text id="txtItemAvengerRealPower" text="{oAvengerTableModel>sPower}" />
+						<Text id="txtItemAvengerRealWeapon" text="{oAvengerTableModel>sWeapon}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<Table id="idInfinityStoneTable" inset="false" items="{
+			path: 'oInfityStoneTableModel>/aInfinityStoneTableResult'
+		}">
+			<columns>
+				<Column id="colStoneId">
+					<Text id="txtStoneId" text="StoneId" />
+				</Column>
+				<Column id="colStoneName" minScreenWidth="Tablet" demandPopin="true">
+					<Text id="txtStoneName" text="StoneName" />
+				</Column>
+				<Column id="colStoneColor" minScreenWidth="Desktop" demandPopin="true" hAlign="End">
+					<Text id="txtStoneColor" text="StoneColor" />
+				</Column>
+				<Column id="colStoneLocation" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+					<Text id="txtStoneLocation" text="StoneLocation" />
+				</Column>
+				<Column id="colStonePower" hAlign="End">
+					<Text id="txtStonePower" text="StonePower" />
+				</Column>
+				<Column id="colStoneMovie" hAlign="End">
+					<Text id="txtStoneMovie" text="Movie" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id="colStoneColumnListItem" vAlign="Middle">
+					<cells>
+						<Text id="txtItemStoneId" text="{oInfityStoneTableModel>sStoneId}" />
+						<Text id="txtItemStoneName" text="{oInfityStoneTableModel>sStoneName}" />
+						<Text id="txtItemStoneColor" text="{oInfityStoneTableModel>sStoneColor}" />
+						<Text id="txtItemStoneLocation" text="{oInfityStoneTableModel>sStoneLocation}" />
+						<Text id="txtItemStonePower" text="{oInfityStoneTableModel>sStonePower}" />
+						<Text id="txtItemStoneMovie" text="{oInfityStoneTableModel>sMovie}" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Page>
+</mvc:View>
