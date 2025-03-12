@@ -41,12 +41,16 @@ sap.ui.define([
         },
         onAvengersClick: function(oEvent) {
             
-            // var oAvengerTableModel = new JSONModel(AvengerObj);
-            this.getView().getModel("oAvengerTableModel").setProperty("/aAvengerTableResult", AvengerObj.aAvengersData)
+            // define a new variable to store and get the data from init funtion.
+            var oAvengerTableModel = this.getView().getModel("oAvengerTableModel")
+
+            oAvengerTableModel.setProperty("/aAvengerTableResult", oAvengerTableModel.getData().aAvengersData)
             // this.getView().getModel("oAvengerTableModel").setProperty("/InfinityStoneTableResult", AvengerObj.aInfityStoneData)
         },
-        onInfinityStonesClick: function(oEvent) {
-            this.getView().getModel("oAvengerTableModel").setProperty("/aAvengerTableResult", AvengerObj.aInfityStoneData);
+        onInfinityStonesClick: function (oEvent) {
+            // this.getView().getModel("oAvengerTableModel").setProperty("/aAvengerTableResult", AvengerObj.aInfityStoneData);
+            var oAvengerTableModel = this.getView().getModel("oAvengerTableModel")
+            oAvengerTableModel.setProperty("/aAvengerTableResult", oAvengerTableModel.getData().aInfityStoneData)
         }
     });
 });
