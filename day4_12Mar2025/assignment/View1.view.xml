@@ -1,0 +1,41 @@
+<mvc:View controllerName="avengerdata.controller.View1"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:tnt="sap.tnt"
+	xmlns="sap.m">
+	<Page id="page" title="Marvel Database">
+		<Button id="btnAvengers" type="Emphasized" text="Avengers" press="onAvengersClick" />
+		<Button id="btnInfinityStones" type="Emphasized" text="Infinity Stones" press="onInfinityStonesClick" />
+
+		<Table id="idSuperHerosTable" inset="false" alternateRowColors="true" items="{
+			path: 'oAvengerTableModel>/aAvengerTableResult'
+		}">
+			<columns>
+				<Column id="colName" minScreenWidth="Tablet" demandPopin="true">
+					<Text id="txtName" text="Name" />
+				</Column>
+				<Column id="colPower" minScreenWidth="Desktop" demandPopin="true">
+					<Text id="txtPower" text="Power" />
+				</Column>
+				<Column id="colMovie" hAlign="End">
+					<Text id="txtMovie" text="Movie" />
+				</Column>
+				<Column id="colStatus" minScreenWidth="Desktop" demandPopin="true" hAlign="Center">
+					<Text id="txtStatus" text="Status" />
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem id="colAvengerColumnListItem" vAlign="Middle" press="onListItemPress" type="Navigation">
+					<cells>
+						<Text id="txtItemName" text="{oAvengerTableModel>sName}" />
+						<Text id="txtItemPower" text="{oAvengerTableModel>sPower}" />
+						<!-- <tnt:InfoLabel id="txtItemMovieIcon" text="{oAvengerTableModel>sMovie}" colorScheme="1" icon="sap-icon://video" /> -->
+						<tnt:InfoLabel id="txtItemMovie" text="{oAvengerTableModel>sMovie}" colorScheme="8" icon="sap-icon://video" />
+						<Button id="btItemStatus" text="{= ${oAvengerTableModel>bStatus} === true ? 'Active' : 'Destroyed'}" 
+						type="{= ${oAvengerTableModel>bStatus} === true ? 'Success' : 'Neutral' }" />
+					</cells>
+				</ColumnListItem>
+			</items>
+		</Table>
+
+	</Page>
+</mvc:View>

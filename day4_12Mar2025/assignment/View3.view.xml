@@ -1,0 +1,10 @@
+<mvc:View controllerName="avengerdata.controller.View3"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:tnt="sap.tnt"
+	xmlns="sap.m">
+	<Page id="page3" title="Marvel Database">
+		<Button id="btnView3Page1" type="Emphasized" text="Go to Page2" press="onView3GoToPage2Click" />
+        <Button id="btnView3Page2" type="Emphasized" text="Go to Main Screen" press="onView3GoToMainClick" />
+
+	</Page>
+</mvc:View>
