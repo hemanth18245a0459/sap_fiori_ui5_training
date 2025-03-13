@@ -1,0 +1,9 @@
+<mvc:View controllerName="avengerdata.controller.View2"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:tnt="sap.tnt"
+	xmlns="sap.m">
+	<Page id="page2" title="Marvel Database">
+		
+
+	</Page>
+</mvc:View>
